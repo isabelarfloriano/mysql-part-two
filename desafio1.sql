@@ -57,14 +57,14 @@ CREATE TABLE SpotifyClone.Following(
     CONSTRAINT PRIMARY KEY (user_id, artist_id),
 ) engine = InnoDB;
 
-INSERT INTO SpotifyClone.Plans (plan, plan_value)
+INSERT INTO SpotifyClone.Plans(plan, plan_value)
 VALUES
   ('gratuito', 0.00),
   ('familiar', 7.99),
   ('universitário', 5.99),
   ('pessoal', 6.99);
 
-INSERT INTO SpotifyClone.Artists (artist)
+INSERT INTO SpotifyClone.Artists(artist)
 VALUES
   ("Walter Phoenix"),
   ("Peter Strong"),
@@ -73,7 +73,7 @@ VALUES
   ("Tyler Isle"),
   ("Fog");
 
-INSERT INTO SpotifyClone.Albums (album, artist_id, release_year)
+INSERT INTO SpotifyClone.Albums(album, artist_id, release_year)
 VALUES
   ('Envious',	1,	'1990'),
   ('Exuberant',	1,	'1993'),
@@ -86,7 +86,7 @@ VALUES
   ('No guarantees',	5,	'2015'),
   ('Apparatus',	6,	'2015');
 
-INSERT INTO SpotifyClone.Songs ( song, album_id, artist_id, length_seconds)
+INSERT INTO SpotifyClone.Songs( song, album_id, artist_id, length_seconds)
 VALUES
   ('Soul For Us', 1,	1,	200),
   ('Reflections Of Magic', 1,	1,	163),
@@ -129,7 +129,7 @@ VALUES
   ('Baby',	10,	6, 136),
   ('You Make Me Feel So..', 10,	6,	83);
 
-INSERT INTO SpotifyClone.Users ( user, age, subscription_date, plan_id)
+INSERT INTO SpotifyClone.Users( user, age, subscription_date, plan_id)
 VALUES
   ('Thati',	23,	'2019-10-20',	1),
   ('Cintia',	35,	'2017-12-30',	2),
@@ -142,7 +142,7 @@ VALUES
   ('Angelina',	42,	'2018-04-29',	2),
   ('Paul',	46,	'2017-01-17',	2);
 
-INSERT INTO SpotifyClone.History ( user_id, song_id, history_data)
+INSERT INTO SpotifyClone.History( user_id, song_id, history_data)
 VALUES
   (1, 36, "2020-02-28 10:45:55"),
   (1, 25, "2020-05-02 05:30:35"),
@@ -183,7 +183,7 @@ VALUES
   (10, 12, "2017-07-27 05:24:49"),
   (10, 13, "2017-12-25 01:03:57");
 
-INSERT INTO SpotifyClone.Following ( user_id, artist_id )
+INSERT INTO SpotifyClone.Following( user_id, artist_id )
 VALUES
   (1, 1),
 	(1, 4),
