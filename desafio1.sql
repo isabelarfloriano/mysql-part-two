@@ -31,6 +31,15 @@ CREATE TABLE SpotifyClone.Songs(
     FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
 ) engine = InnoDB;
 
+CREATE TABLE SpotifyClone.Users(
+    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    subscription_date DATE NOT NULL,
+    plan_id INT NOT NULL,
+    FOREIGN KEY (plan_id) REFERENCES Plans(plan_id),
+) engine = InnoDB;
+
 INSERT INTO SpotifyClone.Plans (plan, plan_value)
 VALUES
   ('gratuito', 0.00),
@@ -102,3 +111,16 @@ VALUES
   ('Wouldn''t It Be Nice',	10,	6, 213),
   ('Baby',	10,	6, 136),
   ('You Make Me Feel So..', 10,	6,	83);
+
+INSERT INTO SpotifyClone.Users ( user, age, subscription_date, plan_id)
+VALUES
+    ('Thati',	23,	'2019-10-20',	1),
+    ('Cintia',	35,	'2017-12-30',	2),
+    ('Bill',	20,	'2019-06-05',	3),
+    ('Roger',	45,	'2020-05-13',	4),
+    ('Norman',	58,	'2017-02-17',	4),
+    ('Patrick',	33,	'2017-01-06',	2),
+    ('Vivian',	26,	'2018-01-05',	3),
+    ('Carol',	19,	'2018-02-14',	3),
+    ('Angelina',	42,	'2018-04-29',	2),
+    ('Paul',	46,	'2017-01-17',	2);
