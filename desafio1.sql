@@ -13,6 +13,14 @@ CREATE TABLE SpotifyClone.Artists(
     artist VARCHAR(50) NOT NULL,
 ) engine = InnoDB;
 
+CREATE TABLE SpotifyClone.Albums(
+    album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    album VARCHAR(100) NOT NULL,
+    artist_id INT NOT NULL,
+    release_year YEAR NOT NULL,
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
+) engine = InnoDB;
+
 INSERT INTO SpotifyClone.Plans (plan, plan_value)
 VALUES
   ('gratuito', 0.00),
@@ -28,3 +36,16 @@ VALUES
   ("Freedie Shannon"),
   ("Tyler Isle"),
   ("Fog");
+
+INSERT INTO SpotifyClone.Albums (album, artist_id, release_year)
+VALUES
+  ('Envious',	1,	'1990'),
+  ('Exuberant',	1,	'1993'),
+  ('Hallowed Steam',	2,	'1995'),
+  ('Incandescent',	3,	'1998'),
+  ('Temporary Culture',	4,	'2001'),
+  ('Library of liberty', 4,	'2003'),
+  ('Chained Down',	5,	'2007'),
+  ('Cabinet of fools',	5,	'2012'),
+  ('No guarantees',	5,	'2015'),
+  ('Apparatus',	6,	'2015');
