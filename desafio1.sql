@@ -8,20 +8,23 @@ CREATE TABLE SpotifyClone.Plans(
     plan_value DECIMAL(3,2) NOT NULL,
 ) engine = InnoDB;
 
-CREATE TABLE SpotifyClone.tabela2(
-    coluna1 tipo restricoes,
-    coluna2 tipo restricoes,
-    colunaN tipo restricoes,
+CREATE TABLE SpotifyClone.Artists(
+    artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    artist VARCHAR(50) NOT NULL,
 ) engine = InnoDB;
 
 INSERT INTO SpotifyClone.Plans (plan, plan_value)
 VALUES
   ('gratuito', 0.00),
   ('familiar', 7.99),
-  ('universitário', 5.99);
+  ('universitário', 5.99),
   ('pessoal', 6.99);
 
-INSERT INTO SpotifyClone.tabela2 (coluna1, coluna2)
+INSERT INTO SpotifyClone.Artists (artist)
 VALUES
-  ('exemplo de dados 1', 'exemplo de dados X'),
-  ('exemplo de dados 2', 'exemplo de dados Y');
+  ("Walter Phoenix"),
+  ("Peter Strong"),
+  ("Lance Day"),
+  ("Freedie Shannon"),
+  ("Tyler Isle"),
+  ("Fog");
