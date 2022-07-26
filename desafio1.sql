@@ -49,6 +49,14 @@ CREATE TABLE SpotifyClone.History(
     CONSTRAINT PRIMARY KEY (user_id, song_id),
 ) engine = InnoDB;
 
+CREATE TABLE SpotifyClone.Following(
+    user_id INT NOT NULL,
+    artist_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
+    CONSTRAINT PRIMARY KEY (user_id, artist_id),
+) engine = InnoDB;
+
 INSERT INTO SpotifyClone.Plans (plan, plan_value)
 VALUES
   ('gratuito', 0.00),
@@ -174,3 +182,28 @@ VALUES
   (10, 21, "2017-12-04 05:33:43"),
   (10, 12, "2017-07-27 05:24:49"),
   (10, 13, "2017-12-25 01:03:57");
+
+INSERT INTO SpotifyClone.Following ( user_id, artist_id )
+VALUES
+  (1, 1),
+	(1, 4),
+	(1, 3),
+	(2, 1),
+	(2, 3),
+	(3, 2),
+	(3, 1),
+	(4, 4),
+	(5, 5),
+	(5, 6),
+	(6, 6),
+	(6, 3),
+	(6, 1),
+	(7, 2),
+	(7, 5),
+	(8, 1),
+	(8, 5),
+	(9, 6),
+	(9, 4),
+	(9, 3),
+	(10, 2),
+	(10, 6);
