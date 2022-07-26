@@ -5,12 +5,12 @@ CREATE DATABASE SpotifyClone;
 CREATE TABLE SpotifyClone.Plans(
     plan_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     plan VARCHAR(50) NOT NULL,
-    plan_value DECIMAL(3,2) NOT NULL,
+    plan_value DECIMAL(3,2) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.Artists(
     artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    artist VARCHAR(50) NOT NULL,
+    artist VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.Albums(
@@ -18,7 +18,7 @@ CREATE TABLE SpotifyClone.Albums(
     album VARCHAR(100) NOT NULL,
     artist_id INT NOT NULL,
     release_year YEAR NOT NULL,
-    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.Songs(
@@ -28,7 +28,7 @@ CREATE TABLE SpotifyClone.Songs(
     artist_id INT NOT NULL,
     length_seconds INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES Albums(album_id),
-    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.Users(
@@ -37,7 +37,7 @@ CREATE TABLE SpotifyClone.Users(
     age INT NOT NULL,
     subscription_date DATE NOT NULL,
     plan_id INT NOT NULL,
-    FOREIGN KEY (plan_id) REFERENCES Plans(plan_id),
+    FOREIGN KEY (plan_id) REFERENCES Plans(plan_id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.History(
@@ -46,7 +46,7 @@ CREATE TABLE SpotifyClone.History(
     history_data DATETIME NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (song_id) REFERENCES Songs(song_id),
-    CONSTRAINT PRIMARY KEY (user_id, song_id),
+    CONSTRAINT PRIMARY KEY (user_id, song_id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.Following(
@@ -54,7 +54,7 @@ CREATE TABLE SpotifyClone.Following(
     artist_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
-    CONSTRAINT PRIMARY KEY (user_id, artist_id),
+    CONSTRAINT PRIMARY KEY (user_id, artist_id)
 ) engine = InnoDB;
 
 INSERT INTO SpotifyClone.Plans(plan, plan_value)
